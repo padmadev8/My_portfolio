@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padma's Web</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f8f9fa;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background:#c6d4f0;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#444;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+.menu-toggle{
+font-size:28px;
+cursor:pointer;
+display:none;
+}
+
+.nav-menu{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+
+/* ===== HERO SECTION ===== */
+
+.hero{
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:url("images/header.png") center/cover no-repeat;
+
+    animation: zoomBackground 20s infinite alternate;
+    z-index:-2;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    z-index:-1;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.hero button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    background:white;
+    color:#6a0dad;
+    font-weight:bold;
+    border-radius:25px;
+    cursor:pointer;
+}
+@keyframes zoomBackground{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.15);
+}
+
+}
+/* ===== SECTION COMMON ===== */
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:32px;
+    color:#222;
+}
+
+/* ===== SERVICES ===== */
+#services{
+background:#f7f7f7;
+}
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.card h3{
+    margin:15px 0 10px;
+    color:#333;
+}
+
+.card p{
+    font-size:14px;
+    color:#666;
+    line-height:1.6;
+}
+
+/* ===== PROJECTS ===== */
+#projects{
+background:#ffffff;
+}
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:30px;
+}
+.view-btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 18px;
+background:#ff7a18;
+color:white;
+border-radius:20px;
+text-decoration:none;
+font-size:14px;
+}
+
+.view-btn:hover{
+background:#ff5500;
+}
+
+.contact{
+background:#f4f6fb;
+text-align:center;
+}
+
+.contact-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+max-width:800px;
+margin:auto;
+}
+
+.contact-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+transition:0.3s;
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
+.contact-card:hover{
+transform:translateY(-5px);
+}
+
+.contact-card i{
+font-size:28px;
+color:#ff7a18;
+margin-bottom:10px;
+}
+
+.contact-card h3{
+margin-bottom:8px;
+}
+
+.contact-card p{
+color:#666;
+font-size:14px;
+}
+
+.contact-whatsapp{
+margin-top:30px;
+}
+
+.contact-whatsapp a{
+background:#25D366;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+font-weight:500;
+display:inline-block;
+}
+
+.contact-whatsapp a:hover{
+background:#1ebc59;
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+/* ===== FOOTER ===== */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+
+.chat-btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 28px;
+background:#ff7a18;
+color:white;
+font-weight:600;
+border-radius:30px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.chat-btn:hover{
+background:#ff5500;
+transform:translateY(-2px);
+}
+/* ===== WHATSAPP FLOAT ===== */
+
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    font-size:28px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    transition:0.3s;
+    z-index:999;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+section{
+scroll-margin-top:90px;
+}
+
+#services,
+#projects,
+#contact{
+scroll-margin-top:80px;
+}
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+    .menu-toggle{
+display:block;
+font-size:26px;
+}
+
+.nav-menu{
+position:absolute;
+top:65px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+display:none;
+gap:0;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.nav-menu li{
+border-bottom:1px solid #eee;
+}
+
+.nav-menu li a{
+display:block;
+padding:15px;
+}
+
+.nav-menu.active{
+display:flex;
+}
+
+#overlay{
+display:none;
+}
+
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+
+<nav class="navbar">
+
+<div class="logo">Padma's Web</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<ul id="menu" class="nav-menu">
+<li><a href="#" onclick="closeMenu()">Home</a></li>
+<li><a href="#services" onclick="closeMenu()">Services</a></li>
+<li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+<li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+</ul>
+
+</nav>
+
+<div id="overlay" onclick="toggleMenu()"></div>
+<!-- ===== HERO ===== -->
+
+<section class="hero">
+    <div>
+        <h1>Designing Websites<br>That Grow Your Business</h1>
+        <p>I build modern, responsive and user-friendly websites for businesses and individuals.</p>
+        <a href="https://wa.me/9159926961?text=Hi%20Padma,%20I%20would%20like%20to%20discuss%20a%20website%20project." 
+   target="_blank" 
+   class="chat-btn">
+   Discuss Your Project
+</a>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+
+<section id="services">
+    <h2 class="section-title">My Services</h2>
+    <div class="services">
+
+        <div class="card">
+            <img src="images/static.png" alt="">
+            <h3>Static Website Design</h3>
+            <p>Professional business and personal websites using clean HTML & CSS structure.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/complex webpage.png" alt="">
+            <h3>Responsive Design</h3>
+            <p>Mobile-friendly layouts that work smoothly on phones, tablets and desktops.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/form.png" alt="">
+            <h3>Form Creation</h3>
+            <p>Contact, registration and feedback forms with beautiful UI styling.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+
+<section id="projects">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects">
+
+        <div class="card">
+            <img src="images/portfolio.png" alt="">
+            <h3>Personal Portfolio</h3>
+            <p>Modern portfolio website for a freelance designer.</p>
+            <a href="https://yourprojectlink.com" target="_blank" class="view-btn">
+View Project
+</a>
+        </div>
+
+       <div class="card">
+
+<img src="images/microgreen_bg.jpg" alt="Project">
+
+<h3>Microgreen Website</h3>
+
+<p>Business website design for organic microgreen products.</p>
+
+<a href="https://padmadev8.github.io/Yanira_Microgreen/" target="_blank" class="view-btn">
+View Project
+</a>
+
+</div>
+        <div class="card">
+            <img src="images/construct.jpg" alt="">
+            <h3>construction Website</h3>
+            <p>Business website design for construction site.</p>
+            <a href="https://www.csktraders.com/" target="_blank" class="view-btn">
+View Project
+</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Have a project idea? Let's discuss and bring it to life.</h2>
+
+<div class="contact-container">
+
+<a href="mailto:padmaeee1056@gmail.com" class="contact-card">
+<i class="fa-solid fa-envelope"></i>
+<h3>Email</h3>
+<p>padmaeee1056@gmail.com</p>
+</a>
+
+<a href="tel:+91959926961" class="contact-card">
+<i class="fa-solid fa-phone"></i>
+<h3>Phone</h3>
+<p>+91 959926961</p>
+</a>
+
+<!-- <a href="https://maps.google.com/?q=Tamil+Nadu+India" target="_blank" class="contact-card">
+<i class="fa-solid fa-location-dot"></i>
+<h3>Location</h3>
+<p>Tamil Nadu, India</p>
+</a> -->
+
+</div>
+
+<div class="contact-whatsapp">
+<a href="https://wa.me/9159926961?text=Hi Padma, I want to discuss a website project." target="_blank">
+<i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+</a>
+</div>
+
+</section>
+
+<footer>
+    © 2026 Padma's Web | All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){
+
+document.getElementById("menu").classList.toggle("active");
+
+document.getElementById("overlay").classList.toggle("active");
+
+}
+function closeMenu(){
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+}
+
+document.querySelectorAll(".nav-menu a").forEach(link=>{
+link.addEventListener("click",()=>{
+menu.classList.remove("active");
+overlay.classList.remove("active");
+});
+});
+</script>
+<a href="https://wa.me/9159926961?text=Hi%20Padma,%20I%20am%20interested%20in%20your%20web%20design%20services." 
+   class="whatsapp-float" 
+   target="_blank">
+   <i class="fa-brands fa-whatsapp"></i>
+</a>
+</body>
+</html>
